@@ -53,7 +53,7 @@ public class WiimoteManager extends Thread implements WiiRemoteListener{
 		} catch (IOException e) {
 			logger.log(Level.SEVERE, "IOException", e);
 		} catch (NullPointerException e){
-			logger.log(Level.SEVERE, "NullException. We couold not find Balance Wii Board.", e);
+			logger.log(Level.SEVERE, "NullException. We couold not find Balance Wii mote.", e);
 			System.exit(1);
 			return;
 		}
