@@ -65,7 +65,7 @@ public class WiimoteManager extends Thread implements WiiRemoteListener{
 
 	public void accelerationInputReceived(WRAccelerationEvent evt) {
 		double jogThreashold = 0.8;
-		logger.info("called");
+
 		double xAcceleration = evt.getXAcceleration();
 		double yAcceleration = evt.getYAcceleration();
 		double zAcceleration = evt.getZAcceleration();
