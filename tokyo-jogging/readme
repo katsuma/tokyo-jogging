@@ -56,6 +56,8 @@ But it's very useful for building and running it and I recommend it.
 Eclipse is a very handy (and free!) IDE that has a special place 
 in the hearts of many Java programmers.
 
+And I wrote how to run Tokyo-jogging without using Eclise below.
+
 (*) Eclipse (Eclipse IDE for Java Developers)
 http://www.eclipse.org/downloads/
 
@@ -87,32 +89,42 @@ http://www.eclipse.org/downloads/
 
 
 
-
 ---------------------------------------------------
- How to run
+ How to run (without Exlipse)
 ---------------------------------------------------
 
-1. You need to make your PC/Mac to find your wiimote.
-   
-   On Mac OSX, RVL Enabler(*) is very useful for this operation.
-   Just press Search in the Device Discovery window and it will find and pair 
-   any Wiimotes that are discoverable.
-   (On Windows, I don't know about any software like this..., sorry.)
+1. Open Terminal and change the unzipped location.
+   (ex: cd /Users/YOUR_NAME/Desktop/tokyo-jogging/)
 
-(*) RVL Enabler http://windower.net/RVLEnabler.zip
-   
+2. Exnter this command.
+   ./start-jogging.sh
 
-2. On Eclipse, right-click on your package root directory and select "Run As > Java Application".
-
-3. Select "TokyoJogging - tv.katsuma.jog" and click "OK" button.
-   And it will run the program.
+3. Press the "SYNC" button on your back of Wiimote.
+   If Tokyo-Jogging finds your Wiimote, the message will be displayed on Eclipse console.
 
 4. Open your web browser and go to "http://www.tokyo-jogging.com/start/".
 
-5. Press the "SYNC" button on your back of Wiimote.
+5. Put your Wiimote to your pocket and clean up around you.
+
+6 . Have fun! :-)
+
+
+
+---------------------------------------------------
+ How to run (with Exlipse)
+---------------------------------------------------
+
+1. On Eclipse, right-click on your package root directory and select "Run As > Java Application".
+
+2. Select "TokyoJogging - tv.katsuma.jog" and click "OK" button.
+   And it will run the program.
+
+3. Press the "SYNC" button on your back of Wiimote.
    If Tokyo-Jogging finds your Wiimote, the message will be displayed on Eclipse console.
 
-6. Put your Wiimote to your pocket and clean up around you.
+4. Open your web browser and go to "http://www.tokyo-jogging.com/start/".
 
-7 . Have fun! :-)
+5. Put your Wiimote to your pocket and clean up around you.
+
+6 . Have fun! :-)
 
