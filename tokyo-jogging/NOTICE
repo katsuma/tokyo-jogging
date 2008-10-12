@@ -1,0 +1,23 @@
+------------------------------
+ 
+ Tokyo-Jogging
+
+------------------------------
+
+
+
+Notice
+------------------------------
+
+The following third-party libraries are not part of the software 
+and are subject to their respective licenses (see folder "Licenses"):
+
+ 
+ - BlueCove (LGPL, http://www.bluecove.org/)
+ 
+ - Jetty (Apache2.0, http://jetty.mortbay.com/jetty/)
+ 
+ - JSON.simple (LGPL, http://www.JSON.org/java/json_simple.zip)
+ 
+ - WiiRemoteJ (http://www.world-of-cha0s.hostrocket.com/WiiRemoteJ/)
+   WiiRemoteJ is available for free, subject to its license.
