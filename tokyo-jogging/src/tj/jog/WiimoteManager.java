@@ -59,7 +59,7 @@ public class WiimoteManager extends Thread implements WiiRemoteListener{
 		} catch (IOException e) {
 			logger.log(Level.SEVERE, "IOException", e);
 		} catch (NullPointerException e){
-			logger.log(Level.SEVERE, "NullException. We couold not find your Wiimote.", e);
+			logger.log(Level.SEVERE, "NullException. We could not find your Wiimote.", e);
 			System.exit(1);
 			return;
 		}

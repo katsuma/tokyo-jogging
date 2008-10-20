@@ -55,7 +55,7 @@ public class BalanceBoardManager extends Thread implements BalanceBoardListener 
 		} catch (IOException e) {
 			logger.log(Level.SEVERE, "IOException", e);
 		} catch (NullPointerException e){
-			logger.log(Level.SEVERE, "NullException. We couold not find Balance Wii Board.", e);
+			logger.log(Level.SEVERE, "NullException. We couold not find your Balance Wii Board.", e);
 			System.exit(1);
 			return;
 		}
@@ -77,28 +77,28 @@ public class BalanceBoardManager extends Thread implements BalanceBoardListener 
 
 	public void massInputReceived(BBMassEvent evt) {
 		double threshold = 1.0;
-		double top = evt.getMass(MassConstants.TOP, (int)Math.floor((MassConstants.LEFT + MassConstants.RIGHT)/2));
-		double right = evt.getMass((int)Math.floor(MassConstants.TOP + MassConstants.BOTTOM),  MassConstants.RIGHT);
-		double BOTTOM = evt.getMass(MassConstants.BOTTOM, (int)Math.floor((MassConstants.LEFT + MassConstants.RIGHT)/2));
-		double left = evt.getMass((int)Math.floor(MassConstants.TOP + MassConstants.BOTTOM),  MassConstants.LEFT);
+		double massTop = evt.getMass(MassConstants.TOP, (int)Math.floor((MassConstants.LEFT + MassConstants.RIGHT)/2));
+		double massRight = evt.getMass((int)Math.floor(MassConstants.TOP + MassConstants.BOTTOM),  MassConstants.RIGHT);
+		double massBottom = evt.getMass(MassConstants.BOTTOM, (int)Math.floor((MassConstants.LEFT + MassConstants.RIGHT)/2));
+		double massLeft = evt.getMass((int)Math.floor(MassConstants.TOP + MassConstants.BOTTOM),  MassConstants.LEFT);
 		double totalMass = evt.getTotalMass();
 		
-		double topRatio = top / (top + right + BOTTOM + left);
-		double rightRatio = right / (top + right + BOTTOM + left);
-		double BOTTOMRatio = BOTTOM / (top + right + BOTTOM + left);
-		double leftRatio = left / (top + right + BOTTOM + left);
+		double topRatio = massTop / (massTop + massRight + massBottom + massLeft);
+		double rightRatio = massRight / (massTop + massRight + massBottom + massLeft);
+		double bottomRatio = massBottom / (massTop + massRight + massBottom + massLeft);
+		double leftRatio = massLeft / (massTop + massRight + massBottom + massLeft);
 
 		// check value by threshold
-		if(top<threshold || left<threshold || right<threshold || BOTTOM<threshold) return;
+		if(massTop<threshold || massLeft<threshold || massRight<threshold || massBottom<threshold) return;
 
-		byte direction = getDirectionByMass(topRatio, rightRatio, BOTTOMRatio, leftRatio);
+		byte direction = getDirectionByMass(topRatio, rightRatio, bottomRatio, leftRatio);
 		logger.info("Direction(1):" + direction);
 		
 		// dispatch job to HttpServer
 		JSONObject obj = new JSONObject();
 		obj.put("Top",  topRatio);
 		obj.put("Right", rightRatio);
-		obj.put("BOTTOM", BOTTOMRatio);
+		obj.put("BOTTOM", bottomRatio);
 		obj.put("Left", leftRatio);
 		obj.put("Direction", direction);
 		obj.put("TotalMass", totalMass);
