@@ -1,0 +1,82 @@
+*{ 
+	margin:0; padding:0;
+}
+body{
+	font-family:"frutiger linotype","lucida grande",helvetica,arial,sans-serif;
+	overflow : hidden;
+	text-align : center;
+}
+
+div#announce{
+	width: 100%; height: 1.6em;
+	position : absolute;
+	top : 0; left : 0;
+	z-index : 300;
+	background : #FFFFAA;
+	display : none;
+}
+	div#announce p#announce-text{
+		font-size : 0.8em;
+		float : left;
+		margin : 0.2em 2em;
+		font-weight : bold;
+	}
+	div#announce button{
+		float : right;
+		margin : 0.2em 0 0 2em;
+	}
+
+div#street{ 
+	width: 100%; height: 800px;
+}
+
+div#distance{
+	position:absolute;right:0px; top:0px;
+}
+div#distance span{
+	color:#FFF; font-weight:bold;
+}
+span#distance-value{
+	font-size:10em;
+}
+span#distance-unit{
+	font-size:2em;
+}
+
+div#map{
+	width:300px; height: 250px; position:absolute; left:0px; top:0; 
+}
+div#navi{
+	position:absolute; 
+	top:250px; 
+	display:none;
+}
+div#navi a{
+	display : block;
+	width : 377px;
+	height : 155px;
+	margin : 10px 0;
+}
+div#navi a#navi-jogging{
+	background : url(./btn_start_jogging.png) no-repeat;
+}
+div#navi a#navi-walking{
+	background : url(./btn_start_walking.png) no-repeat;
+}
+
+div#navi a#navi-jogging:hover, div#navi a#navi-walking:hover{
+	background-position : 0 -155px;
+}
+
+div#navi a span{
+	display : none;
+}
+v\:* {behavior:url(#default#VML);}
+
+div#debugger{
+	width : 100%;
+	height : 10em;
+	clear: both;
+	overflow : scroll;
+	displaty : none;
+}

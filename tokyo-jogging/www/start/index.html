@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
+Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta name="keywords" content="Tokyo-Jogging, Wii, Wiimote, Balance Wii Board, Google street view" />
+	<meta name="description" content="Tokyo-Jogging is a mashup project using wiimote and google street view." />
+	<link rel="alternate" type="application/xml" href="http://www.tokyo-jogging.com/index.xml" title="RSS 2.0" />
+	<link rel="stylesheet" type="text/css" href="./common.css?08090901" />
+	<link rel="shortcut icon" type="image/x-icon" id="favicon" href="../favicon.ico" />
+    <title>Tokyo Jogging</title>
+  </head>
+	
+	
+  <body>
+  
+	<div id="announce">
+		<button id="announce-button">Close</button>
+		<p id="announce-text">We updated the server program on 21th Oct 2008. If you haven't updated it yet, click <a href="../">here</a>.</p>
+	</div>
+	
+	<div id="street"></div>
+	
+	<div id="distance">
+		<span id="distance-value">0</span>
+		<span id="distance-unit">km</span>
+	</div>
+	
+	<div id="navi">
+		<a href="javascript:void(0);" id="navi-jogging"><span>Start Jogging</span></a>
+		<a href="javascript:void(0);" id="navi-walking"><span>Start Walking</span></a>
+	</div>
+	
+	<div id="map"></div>
+
+<!--	<div id="debugger"></div>-->
+	
+    <script src="./jquery.js" type="text/javascript"></script>
+	<script type="text/javascript" src="./wiimote_status.js?081021"></script>
+	<script type="text/javascript" src="./balanceboard_status.js?081021"></script>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAN2rU_LDe3rJrWbi3yPhjyBQTLywmQL1pRjqtt7UCbp6WkkVIzhTsvxGwRqNo9DdiPwVH9hAmLJF6Hw"
+      type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+    //<![CDATA[
+    
+    var TJ = {
+		panorama : {},
+		currentYaw : -90,
+		currentPitch : 0,
+		currentZoom : 0,
+		zoomingIn : true,
+		balanceBoardStatus : {},
+		position : {},//shibuya,
+		
+		firstJog : true,
+		currentPoint : null,
+		prevPoint : null,
+		distanceHistory : 0,
+		
+		map : null,
+		marker : null,
+		mapZoomLevel : 17,
+		
+		actions : {
+	    	jog : function(){
+	    		TJ.panorama.followLink(TJ.currentYaw);
+	    	},
+	    	step : function(){
+	    		TJ.panorama.followLink(TJ.currentYaw);	    	
+	    	},
+	    	stop : function(){
+	    		TJ.panorama.followLink(TJ.currentYaw+180);
+	    	},	
+	    	
+	    	left : function(v){
+	    		TJ.currentYaw -= v || 15;
+	      		TJ.panorama.panTo({yaw:TJ.currentYaw, pitch:TJ.currentPitch, zoom:TJ.currentZoom});
+	 		},
+	    	
+	    	right : function(v){
+	   			TJ.currentYaw += v || 15;
+	   			TJ.panorama.panTo({yaw:TJ.currentYaw, pitch:TJ.currentPitch, zoom:TJ.currentZoom});
+	    	},
+	    	
+	    	zoomIn : function(){
+	    		TJ.currentZoom += 1;
+	    		if(TJ.currentZoom>=2){
+	       			TJ.currentZoom = 2;
+	       		}
+		      	TJ.panorama.panTo({yaw:TJ.currentYaw, pitch:TJ.currentPitch, zoom: TJ.currentZoom});
+	    	},
+	    	
+	    	zoomOut : function(){
+	    		TJ.currentZoom -= 1;
+	       		if(TJ.currentZoom<=0){
+	       			TJ.currentZoom = 0;
+	       		} 	    		    	
+	      		TJ.panorama.panTo({yaw:TJ.currentYaw, pitch:TJ.currentPitch, zoom: TJ.currentZoom});
+	    	},
+	    	
+	    	up : function(){
+	    		TJ.currentPitch -= 10;
+	       		if(TJ.currentPitch<=-90){
+	       			TJ.currentPitch = -90;
+	       		}  	
+		      	TJ.panorama.panTo({yaw:TJ.currentYaw, pitch:TJ.currentPitch, zoom: TJ.currentZoom});
+	    	},
+	    	
+	    	down : function(){
+	    		TJ.currentPitch += 10;
+	       		if(TJ.currentPitch>=90){
+	       			TJ.currentPitch = 90;
+	       		}  	
+		      	TJ.panorama.panTo({yaw:TJ.currentYaw, pitch:TJ.currentPitch, zoom: TJ.currentZoom});	    	
+	    	}
+		}
+    };
+    
+        
+	
+	var mapElement = document.getElementById("map");	
+	TJ.position = new GLatLng(/*35.660990,139.701376*/35.659461,139.700512);
+	
+	// init map
+	TJ.map = new GMap2(mapElement);
+	TJ.map.setCenter(TJ.position, TJ.mapZoomLevel);
+
+	var guyIcon = new GIcon(G_DEFAULT_ICON);
+	guyIcon.image = "http://maps.google.com/intl/en_us/mapfiles/cb/man_arrow-0.png";
+	guyIcon.transparent = "http://maps.google.com/intl/en_us/mapfiles/cb/man-pick.png";
+	guyIcon.imageMap = [
+		26,13, 30,14, 32,28, 27,28, 28,36, 18,35, 18,27, 16,26,
+		16,20, 16,14, 19,13, 22,8
+	];
+	guyIcon.iconSize = new GSize(49, 52);
+	guyIcon.iconAnchor = new GPoint(25, 35);
+	//guyIcon.infoWindowAnchor = new GPoint(5, 0);
+
+	TJ.marker = new GMarker(TJ.position, {icon:guyIcon, draggable:false});
+	TJ.map.addOverlay(TJ.marker);
+	GEvent.addListener(TJ.marker, "click", function(){
+		TJ.marker.openInfoWindowHtml("<img src=\"http://tokyo-jogging.com/images/marker-katsuma.png\" /><p>katsuma</p>");
+	});
+	
+	TJ.currentPoint = TJ.prevPoint = TJ.marker.getPoint();
+	
+	// init panorama
+	TJ.panorama = new GStreetviewPanorama(document.getElementById("street"));
+	TJ.panorama.setLocationAndPOV(
+		TJ.position, 
+		{ yaw:TJ.currentYaw, pitch: TJ.currentPitch, zoom: TJ.currentZoom}
+	);
+	
+	// add event listener
+	GEvent.addListener(TJ.panorama, "initialized", function(loc){
+		var _TJ = window.TJ;
+		_TJ.map.panTo(loc.latlng);
+		_TJ.marker.setLatLng(loc.latlng);
+		
+		_TJ.prevPoint = _TJ.currentPoint;
+		_TJ.currentPoint = _TJ.marker.getPoint(); 
+		_TJ.distanceHistory += _TJ.currentPoint.distanceFrom(_TJ.prevPoint) /1000;
+		if(!_TJ.firstJog) {
+			$("#distance-value").html(_TJ.distanceHistory.toFixed(2));
+			var line = new GPolyline([_TJ.prevPoint, _TJ.currentPoint]);
+			_TJ.map.addOverlay(line);
+		}
+		_TJ.firstJog = false;
+	});	
+
+	// move marler to start position
+	var gsClient = new GStreetviewClient();
+	gsClient.getNearestPanorama(TJ.position, function(data){
+		if(data.code!=200) return;
+		var newPoint = data.location.latlng;
+		var _TJ = window.TJ;
+		_TJ.map.panTo(newPoint);
+		_TJ.marker.setLatLng(newPoint);
+	});
+	
+
+
+	// Start jogging
+	$('a#navi-jogging').click(function(){
+		$('a#navi-jogging').hide();	
+		$('a#navi-walking').hide();	
+		WiimoteStatus.initialize();
+	});
+	
+	// Start walking
+	$('a#navi-walking').click(function(){
+		$('a#navi-jogging').hide();	
+		$('a#navi-walking').hide();	
+		BalanceBoardStatus.initialize();
+	});
+	
+	var clientWidth= document.body.clientWidth || window.innerWidth;
+	$('div#navi').css('left', (clientWidth/2)-188 + 'px').css('display','block');
+
+	$(function(){
+		$('#announce').slideDown();
+		$('#announce-button').click(function(){
+			$('#announce').slideUp();
+		});		
+	})
+	$('body').unload(GUnload);
+		
+    //]]>
+    </script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-68351-10");
+pageTracker._trackPageview();
+</script>
+
+  </body>
+</html>

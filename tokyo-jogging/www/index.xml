@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+		<title>Tokyo-Jogging</title>
+		<link>http://www.tokyo-jogging.com/</link>
+		<description>Tokyo-Jogging is a mashup project using wiimote and google street view.</description>
+		<language>ja</language>
+		<pubDate>Sun, 21 Oct 2008 03:38:06 +0900</pubDate>
+		<lastBuildDate>Sun, 21 Oct 2008 03:38:06 +0900</lastBuildDate>
+		<docs>http://blogs.law.harvard.edu/tech/rss/</docs>
+		<item>
+			<title>Reloanched Tokyo-Jogging</title>
+			<link>http://www.tokyo-jogging.com/</link>
+			<description>Tokyo-Jogging relaunched our web site.</description>
+			<pubDate>Mon, 21 Oct 2008 03:34:00 +0900</pubDate>
+		</item>
+	</channel>
+</rss>

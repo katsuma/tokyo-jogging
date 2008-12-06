@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 
+Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Tokyo Jogging</title>
+    <style>
+    <!--
+    	
+    	*{ 
+    		margin:0; padding:0;
+    	}
+    	div#map{
+    		position:absolute; left:0px; top:0px; width:100%; height: 100%; 
+    	}
+    	div#street{ 
+    		position:absolute; left: 60%; width: 40%; top: 70%; height: 30%;
+    	}
+
+    -->
+    </style>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAN2rU_LDe3rJrWbi3yPhjyBQTLywmQL1pRjqtt7UCbp6WkkVIzhTsvxGwRqNo9DdiPwVH9hAmLJF6Hw"
+      type="text/javascript"></script>
+
+  </head>
+	
+	
+  <body>
+	
+	<div id="map"></div>
+	<div id="street"></div>
+
+    <script type="text/javascript">
+
+    //<![CDATA[
+	
+function getRef(lat, long){
+　　return 'Start jogging <a href="../start?lat=' + lat.toString() + "&long=" + long.toString() + '">here</a>';
+}
+
+var marker;
+var panorama;
+
+function onResponse(response) {
+  if (response.code != 200) {
+    marker.openInfoWindowHtml("No nearby panorama found");
+  } else {
+    var latlng = new GLatLng(response.Location.lat, response.Location.lng);
+    marker.setLatLng(latlng);
+    marker.openInfoWindowHtml(getRef(latlng.lat(), latlng.lng()));
+    panorama.setLocationAndPOV(latlng, null);
+  }
+}
+
+var options = {resultList : G_GOOGLEBAR_RESULT_LIST_SUPPRESS,
+               onGenerateMarkerHtmlCallback : function(marker, div, result){ marker.hide(); return null; },
+               showOnLoad : true};
+var map = new GMap2(document.getElementById("map"), {googleBarOptions: options});
+map.setCenter(new GLatLng(0,0), 2);
+map.addControl(new GLargeMapControl());
+svOverlay = new GStreetviewOverlay();
+map.addOverlay(svOverlay);
+map.enableGoogleBar();
+
+var client = new GStreetviewClient();
+panorama = new GStreetviewPanorama(document.getElementById("street"));
+
+var guyIcon = new GIcon(G_DEFAULT_ICON);
+guyIcon.image = "http://maps.google.com/intl/en_us/mapfiles/cb/man_arrow-0.png";
+guyIcon.transparent = "http://maps.google.com/intl/en_us/mapfiles/cb/man-pick.png";
+guyIcon.imageMap = [26,13, 30,14, 32,28, 27,28, 28,36, 18,35, 18,27, 16,26, 16,20, 16,14, 19,13, 22,8];
+guyIcon.iconSize = new GSize(49, 52);
+guyIcon.iconAnchor = new GPoint(25, 35);
+guyIcon.infoWindowAnchor = new GPoint(25, 5);
+marker = new GMarker(new GLatLng(0,0), {icon:guyIcon, draggable:false});
+var markerShown = false;
+GEvent.addListener(map, "click", function(overlay,latlng,overlaylatlng){
+  if (overlay == null) {
+    marker.setLatLng(latlng);
+    if (!markerShown){
+      markerShown = true;
+      map.addOverlay(marker);
+    }
+    client.getNearestPanorama(latlng, onResponse);
+  }
+});
+		
+	$('body').unload(GUnload);
+		
+    //]]>
+    </script>
+
+  </body>
+</html>
