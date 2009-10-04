@@ -1,178 +1,184 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="keywords" content="Tokyo-Jogging, Wii, Wiimote, Balance Wii Board, Google street view" />
-		<meta name="description" content="Tokyo-Jogging is a mashup project using wiimote and google street view." />
-		<link rel="alternate" type="application/xml" href="http://www.tokyo-jogging.com/index.xml" title="RSS 2.0" />
-		<link rel="stylesheet" type="text/css" href="../css/common.css?08090901" />
-		<link rel="shortcut icon" type="image/x-icon" id="favicon" href="../favicon.ico" />			
-		<title>Readme : Tokyo-Jogging</title>
-	</head>
-	
-	<body>
-	
-	<div id="wrapper">
-	
-		<!-- Header  -->
-		<div id="header">
-			<h1><a href="../"><span>Tokyo-Jogging</span></a></h1>
-			<div id="menu">
-				<ul>
-					<li><a href="../#demo">Demo</a></li>
-					<li><a href="../#howto">How to start</a></li>
-					<li><a href="../#readme">Readme</a></li>
-					<li><a href="../#changes">Changes</a></li>
-					<li><a href="../#contacts">Contact</a></li>
-				</ul>
-			</div>
-			
-		</div>	
-		
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Tokyo-Jogging, Wii, Wiimote, Balance Wii Board, Google street view" />
+        <meta name="description" content="Tokyo-Jogging is a mashup project using wiimote and google street view." />
+        <link rel="alternate" type="application/xml" href="http://www.tokyo-jogging.com/index.xml" title="RSS 2.0" />
+        <link rel="stylesheet" type="text/css" href="../css/common.css?08090901" />
+        <link rel="shortcut icon" type="image/x-icon" id="favicon" href="../favicon.ico" />
+        <title>Readme : Tokyo-Jogging</title>
+    </head>
 
-		<div class="cont">
+    <body>
 
-			<h2 id="readme">Readme</h2>
-					
-			<p>This file describes how to build and run Tokyo-Jogging.</p>
-			
-			<h3> What you need to build</h3>
-			
-			
-			<ol>
-			<li>Wiimote</li>
-			<p>You've already had this one, haven't you?</p>
-			
-			
-			<li>Bluetooth stack</li>
-			<p>You need a Blue stack to run Tokyo-Jogging.</p>
-			
-			<p>On Mac OSX, You'll have no problems. 
-			You can use a default Bluetooth stack. </p>
-			
-			<p>But on Windows, you MUST obtain a separate Bluetooth stack. 
-			Theoretically, <a href="http://www.bluesoleil.com/download/">BlueSoleil</a>(*) should work, 
-			but it will be better with <a href="http://www.broadcom.com/products/bluetooth_update.php">WIDOMM</a> for most people.</p>
-			
-			<p>I developed and built Tokyo-Jogging on Mac OSX, 
-			so I don't know much about how to build on Windows.
-			If you succeeded to build it, let me know it, please. </p>
-			
-			
-			<li>JDK</li>
-			<p>You need <a href="http://java.sun.com/javase/downloads/index.jsp">JDK</a> 1.5 or higher version to build and run Tokyo-Jogging.</p>
-			
-			<p>On Mac OSX, you can use default JDK.
-			On Windows, you need to install and add the Java executable 
-			to your Command Prompt path.</p>
-			
-			
-			<li>Eclipse</li>
-			
-			<p>
-			You can run Tokyo-Jogging without using <a href="http://www.eclipse.org/downloads/">Eclipse</a>.
-			But it's very useful for building and running it and I recommend it.
-			Eclipse is a very handy (and free!) IDE that has a special place 
-			in the hearts of many Java programmers.</p>
-			
-			<p>And I wrote how to run Tokyo-Jogging without using Eclise below.</p>
-			
-			</ol>
-			
-			
-			<h3>How to build</h3>
-			
-			<ol>
-			<li>Unzip the archive file.</li>
-			
-			<li>Open Eclipse and select "New > Java Project" from the File menu.
-			   "Project name" is a free name, for example,"MyTokyoJogging".</li>
-			   
-			<li>Click "Finish" button.</li>
-			
-			<li>Copy the src and lib directory in unzipped directory 
-			   and paste to your project(it may named "MyTokyoJogging") at Package Explorer.</li>
-			
-			<li>Right-click on your package root directory and select "Propertied".</li>
-			
-			<li>Select "Java Build Path".</li>
-			
-			<li>Click the Libraries tab. Add in all JAR files in "lib" directory by clicking on Add External JARs.
-			   And after that Eclipse will re-build your project automatically.</li>
-			
-			</ol>
-			
-			<h2>How to run (without Exlipse)</h2>
-			<ol>
-			<li>
-			Open Terminal and change the unzipped location.<br />
-			   (ex: cd /Users/YOUR_NAME/Desktop/Tokyo-Jogging/)</li>
-			
-			<li>
-			Enter this command.
-			<pre>   ./start-jogging.sh</pre>
-			</li>
-			
-			<li>Press the "SYNC" button on your back of Wiimote.
-			   If Tokyo-Jogging finds your Wiimote, the message will be displayed on Eclipse console.</li>
-			
-			
-			<li>Open your web browser and go to <a href="http://www.tokyo-jogging.com/start/">http://www.tokyo-jogging.com/start/</a>.</li>
-			
-			
-			<li>Put your Wiimote to your pocket and clean up around you.</li>
-			
-			
-			<li>Have fun! :-)</li>
-			
-			</ol>
-			
-			
-			
-			
-			
-			<h3>How to run (with Exlipse)</h3>
-			
-			<ol>
-			
-			<li>On Eclipse, right-click on your package root directory and select "Run As > Java Application".</li>
-			
-			<li>Select "TokyoJogging - tv.katsuma.jog" and click "OK" button.
-			   And it will run the program.</li>
-			
-			<li>Press the "SYNC" button on your back of Wiimote.
-			   If Tokyo-Jogging finds your Wiimote, the message will be displayed on Eclipse console.</li>
-			
-			<li>Open your web browser and go to <a href="http://www.tokyo-jogging.com/start/">http://www.tokyo-jogging.com/start/</a>.</li>
-			
-			<li>Put your Wiimote to your pocket and clean up around you.</li>
-			
-			<li>Have fun! :-)</li>
-			
-			</ol>
-			
-		
-			<script type="text/javascript"><!--
-			google_ad_client = "pub-4582773532678917";
-			/* 468x60_tokyo_jogging_08/09/30 */
-			google_ad_slot = "9022390934";
-			google_ad_width = 468;
-			google_ad_height = 60;
-			//-->
-			</script>
-			<script type="text/javascript"
-			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-			</script>
-				
-		</div>			
-	
-		<!-- Footer  -->
-		<div id="footer">
-			<p id="copyright">Copyright(c) 2008 Tokyo-Jogging and katsuma.tv</p>	
-		</div>
+    <div id="wrapper">
 
-	</div>		
-		
+        <!-- Header  -->
+        <div id="header">
+            <h1><a href="../"><span>Tokyo-Jogging</span></a></h1>
+            <div id="menu">
+                <ul>
+                    <li><a href="../#demo">Demo</a></li>
+                    <li><a href="../#howto">How to start</a></li>
+                    <li><a href="../#readme">Readme</a></li>
+                    <li><a href="../#changes">Changes</a></li>
+                    <li><a href="../#contacts">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="cont">
+
+            <h2 id="readme">Readme</h2>
+
+            <p>This file describes how to build and run Tokyo-Jogging.</p>
+
+            <h3> What you need to build</h3>
+
+
+            <ol>
+            <li>Wiimote</li>
+            <p>You've already had this one, haven't you? And you can also use your nunchuk and blance wii board.</p>
+
+
+            <li>Bluetooth stack</li>
+            <p>You need a Blue stack to run Tokyo-Jogging.</p>
+
+            <p>On Mac OSX, You'll have no problems.
+            You can use a default Bluetooth stack. </p>
+
+            <p>But on Windows, you MUST obtain a separate Bluetooth stack.
+            Theoretically, <a href="http://www.bluesoleil.com/download/">BlueSoleil</a>(*) should work,
+            but it will be better with <a href="http://www.broadcom.com/products/bluetooth_update.php">WIDOMM</a> for most people.</p>
+
+            <p>I developed and built Tokyo-Jogging on Mac OSX,
+            so I don't know much about how to build on Windows.
+            If you succeeded to build it, let me know it, please. </p>
+
+
+            <li>JDK</li>
+            <p>You need <a href="http://java.sun.com/javase/downloads/index.jsp">JDK</a> 1.5 or higher version to build and run Tokyo-Jogging.</p>
+
+            <p>On Mac OSX, you can use default JDK.
+            On Windows, you need to install and add the Java executable
+            to your Command Prompt path.</p>
+
+
+            <li>Eclipse</li>
+
+            <p>
+            You can run Tokyo-Jogging without using <a href="http://www.eclipse.org/downloads/">Eclipse</a>.
+            But it's very useful for building and running it and I recommend it.
+            Eclipse is a very handy (and free!) IDE that has a special place
+            in the hearts of many Java programmers.</p>
+
+            <p>And I wrote how to run Tokyo-Jogging without using Eclise below.</p>
+
+            </ol>
+
+
+            <h3>How to build</h3>
+
+            <ol>
+            <li>Unzip the archive file.</li>
+
+            <li>Open Eclipse and select "New > Java Project" from the File menu.
+               "Project name" is a free name, for example,"MyTokyoJogging".</li>
+
+            <li>Click "Finish" button.</li>
+
+            <li>Copy the src and lib directory in unzipped directory
+               and paste to your project(it may named "MyTokyoJogging") at Package Explorer.</li>
+
+            <li>Right-click on your package root directory and select "Propertied".</li>
+
+            <li>Select "Java Build Path".</li>
+
+            <li>Click the Libraries tab. Add in all JAR files in "lib" directory by clicking on Add External JARs.
+               And after that Eclipse will re-build your project automatically.</li>
+
+            </ol>
+
+            <h3>How to run (without Eclipse)</h3>
+            <ol>
+            <li>
+            Open Terminal and change the unzipped location.<br />
+               (ex: cd /Users/YOUR_NAME/Desktop/Tokyo-Jogging/)</li>
+
+            <li>
+            Enter this command.
+            <pre>   ./start-jogging.sh</pre>
+            </li>
+
+            <li>Press the "SYNC" button on your back of Wiimote.
+               If Tokyo-Jogging finds your Wiimote, the message will be displayed on Eclipse console.</li>
+
+
+            <li>Open your web browser and go to <a href="http://www.tokyo-jogging.com/start/">http://www.tokyo-jogging.com/start/</a>.</li>
+
+
+            <li>Put your Wiimote to your pocket and clean up around you.</li>
+
+
+            <li>Have fun! :-)</li>
+
+            </ol>
+
+
+
+
+
+            <h3>How to run (with Eclipse)</h3>
+
+            <ol>
+
+            <li>On Eclipse, right-click on your package root directory and select "Run As > Java Application".</li>
+
+            <li>Select "TokyoJogging - tv.katsuma.jog" and click "OK" button.
+               And it will run the program.</li>
+
+            <li>Press the "SYNC" button on your back of Wiimote.
+               If Tokyo-Jogging finds your Wiimote, the message will be displayed on Eclipse console.</li>
+
+            <li>Open your web browser and go to <a href="http://www.tokyo-jogging.com/start/">http://www.tokyo-jogging.com/start/</a>.</li>
+
+            <li>Put your Wiimote to your pocket and clean up around you.</li>
+
+            <li>Have fun! :-)</li>
+
+            </ol>
+
+            <h3>for Snow Leopard user</h3>
+            <p>If you use Snow Leopard, check your Java version. You need use JRE 32bit version. If you use Eclipse, set VM arguments <strong>-d32</strong>. It launches your JRE 32-bit version.</p>
+
+
+            <h3>Got an exception, java.lang.IllegalArgumentException: PCM values restricted by JAR82 to minimum 4097</h3>
+            <p>When you run the program and if you got an exception "java.lang.IllegalArgumentException: PCM values restricted by JAR82 to minimum 4097", you need to set the JVM option. If you use Eclipse, set VM arguments <strong>-Dbluecove.jsr82.psm_minimum_off=true</strong>. </p>
+
+            <script type="text/javascript"><!--
+            google_ad_client = "pub-4582773532678917";
+            /* 468x60_tokyo_jogging_08/09/30 */
+            google_ad_slot = "9022390934";
+            google_ad_width = 468;
+            google_ad_height = 60;
+            //-->
+            </script>
+            <script type="text/javascript"
+            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+
+        </div>
+
+        <!-- Footer  -->
+        <div id="footer">
+            <p id="copyright">Copyright(c) 2009 Tokyo-Jogging and katsuma.tv</p>
+        </div>
+
+    </div>
+
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -180,7 +186,7 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 <script type="text/javascript">
 var pageTracker = _gat._getTracker("UA-68351-10");
 pageTracker._trackPageview();
-</script>		
-		
-	</body>
+</script>
+
+    </body>
 </html>
