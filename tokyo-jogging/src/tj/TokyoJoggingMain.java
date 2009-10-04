@@ -21,7 +21,7 @@ public class TokyoJoggingMain {
 			boolean isBalanceBoardAvailable = prop.getProperty("IS_BALANCE_BOARD_AVAILABLE").equalsIgnoreCase("true")? true : false;
 			int httpServerPort = Integer.parseInt(prop.getProperty("HTTP_SERVER_PORT"));
 			
-			logger.info("isWiimoteAvailable : " + isBalanceBoardAvailable);
+			logger.info("isWiimoteAvailable : " + isWiimoteAvailable);
 			logger.info("isBalanceBoardAvailable : " + isBalanceBoardAvailable);
 			logger.info("HttpSeverPort : " + httpServerPort);
 			

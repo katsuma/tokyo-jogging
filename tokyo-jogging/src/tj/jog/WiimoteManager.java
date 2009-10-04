@@ -17,6 +17,9 @@ import wiiremotej.event.WRExtensionEvent;
 import wiiremotej.event.WRIREvent;
 import wiiremotej.event.WRStatusEvent;
 import wiiremotej.event.WiiRemoteListener;
+import wiiremotej.event.WRNunchukExtensionEvent;
+import wiiremotej.AnalogStickData;
+
 
 public class WiimoteManager extends Thread implements WiiRemoteListener{
 	private HttpServer httpServer;
@@ -130,14 +133,51 @@ public class WiimoteManager extends Thread implements WiiRemoteListener{
 	}
 
 	public void extensionConnected(WiiRemoteExtension evt) {
+		try {
+			this.wiiRemote.setExtensionEnabled(true);
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-
+	
 	public void extensionDisconnected(WiiRemoteExtension evt) {
 	}
 
 	public void extensionInputReceived(WRExtensionEvent evt) {
+		if (evt instanceof WRNunchukExtensionEvent) {
+			nunchukEventReceived((WRNunchukExtensionEvent)evt);
+			return;
+		}
+	}
+	
+	private void nunchukEventReceived(WRNunchukExtensionEvent evt) {
+		AnalogStickData analogStickData = evt.getAnalogStickData();
+		double threashold = 0.1;
+		double analogStickX = analogStickData.getX();
+		double analogStickY = analogStickData.getY();
+		double analogStickAngle = analogStickData.getAngle();
+		
+		if (Math.abs(analogStickX)<threashold || Math.abs(analogStickY)<threashold) return;
+		logger.info("analogStick:[" + analogStickX + "," + analogStickY + ", " +  analogStickAngle + "]");
+		JSONObject obj = new JSONObject();
+		byte direction;
+		if(Math.abs(analogStickX) < Math.abs(analogStickY)){
+			direction = analogStickY > 0 ? ACTION_DOWN : ACTION_UP;		
+		} else {
+			direction = analogStickX > 0 ? ACTION_RIGHT : ACTION_LEFT;		
+		}
+		obj.put("action", direction);
+		
+		if(obj.get("action")!=null){
+			this.httpServer.setMessage(obj.toString());
+			logger.info(obj.toString());	
+		}
 	}
 
+	
+	
 	public void extensionPartiallyInserted() {
 		logger.info("extensionPartiallyInserted");		
 	}
