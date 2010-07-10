@@ -83,7 +83,11 @@
             <h3>How to build</h3>
 
             <ol>
-            <li>Unzip the archive file.</li>
+            <li>You can download source code files or archived file from <a href="http://github.com/katsuma/tokyo-jogging">github</a>.
+              Type this command and you'll get source code files.
+              <p><code>git clone git@github.com:katsuma/tokyo-jogging.git</code></p>
+              Or You can download archived file from <a href="http://github.com/katsuma/tokyo-jogging/downloads">here</a>.
+              </li>
 
             <li>Open Eclipse and select "New > Java Project" from the File menu.
                "Project name" is a free name, for example,"MyTokyoJogging".</li>
@@ -151,11 +155,13 @@
 
             </ol>
 
-            <h3>for Snow Leopard user</h3>
+            <h3>FAQ</h3>
+
+            <h4>for Snow Leopard user</h4>
             <p>If you use Snow Leopard, check your Java version. You need use JRE 32bit version. If you use Eclipse, set VM arguments <strong>-d32</strong>. It launches your JRE 32-bit version.</p>
 
 
-            <h3>Got an exception, java.lang.IllegalArgumentException: PCM values restricted by JAR82 to minimum 4097</h3>
+            <h4>Got an exception, java.lang.IllegalArgumentException: PCM values restricted by JAR82 to minimum 4097</h4>
             <p>When you run the program and if you got an exception "java.lang.IllegalArgumentException: PCM values restricted by JAR82 to minimum 4097", you need to set the JVM option. If you use Eclipse, set VM arguments <strong>-Dbluecove.jsr82.psm_minimum_off=true</strong>. </p>
 
             <script type="text/javascript"><!--
@@ -174,7 +180,7 @@
 
         <!-- Footer  -->
         <div id="footer">
-            <p id="copyright">Copyright(c) 2009 Tokyo-Jogging and katsuma.tv</p>
+            <p id="copyright">Copyright(c) 2010 Tokyo-Jogging and katsuma.tv</p>
         </div>
 
     </div>

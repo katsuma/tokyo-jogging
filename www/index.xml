@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
-	<channel>
-		<title>Tokyo-Jogging</title>
-		<link>http://www.tokyo-jogging.com/</link>
-		<description>Tokyo-Jogging is a mashup project using wiimote and google street view.</description>
-		<language>ja</language>
-		<pubDate>Mon, 5 Oct 2009 01:04:43 +0900</pubDate>
-		<lastBuildDate>Mon, 5 Oct 2009 01:04:43 +0900</lastBuildDate>
-		<docs>http://blogs.law.harvard.edu/tech/rss/</docs>
-		<item>
-			<title>Reloanched Tokyo-Jogging</title>
-			<link>http://www.tokyo-jogging.com/</link>
-			<description>Tokyo-Jogging relaunched our web site.</description>
-			<pubDate>Tue, 21 Oct 2008 03:34:00 +0900</pubDate>
-		</item>
-		<item>
-			<title>Now Tokyo-Jogging supports your Nunchuk.</title>
-			<link>http://www.tokyo-jogging.com/?rss&amp;updated_at=20091005</link>
-			<description>Today Tokyo-jogging updated the program for the first time in a year.
+    <channel>
+        <title>Tokyo-Jogging</title>
+        <link>http://www.tokyo-jogging.com/</link>
+        <description>Tokyo-Jogging is a mashup project using wiimote and google street view.</description>
+        <language>ja</language>
+        <pubDate>Sun, 1 July 2010 02:00:00 +0900</pubDate>
+        <lastBuildDate>Sun, 1 July 2010 02:00:00 +0900</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss/</docs>
+        <item>
+            <title>Reloanched Tokyo-Jogging</title>
+            <link>http://www.tokyo-jogging.com/</link>
+            <description>Tokyo-Jogging relaunched our web site.</description>
+            <pubDate>Tue, 21 Oct 2008 03:34:00 +0900</pubDate>
+        </item>
+        <item>
+            <title>Now Tokyo-Jogging supports your Nunchuk.</title>
+            <link>http://www.tokyo-jogging.com/?rss&amp;updated_at=20091005</link>
+            <description>Today Tokyo-jogging updated the program for the first time in a year.
 We started to support your nunchuk. Once your wiimote was detected, connect your nunchuk to it. You can control the view by analog stick of nunchuk.
 
 
@@ -28,7 +28,17 @@ Or you can download binary files from downloads page.
 http://code.google.com/p/tokyo-jogging/downloads/list
 
 Now, let&apos;s start jogging. :-)</description>
-			<pubDate>Mon, 5 Oct 2009 00:44:51 +0900</pubDate>
-		</item>
-	</channel>
+            <pubDate>Mon, 5 Oct 2009 00:44:51 +0900</pubDate>
+        </item>
+        <item>
+            <title>From Google Code to github</title>
+            <link>http://www.tokyo-jogging.com/</link>
+            <description>Today we changed Tokyo-Jogging's source code repositry address from Google Code to github.
+You can download the latest file by git.
+
+git clone git@github.com:katsuma/tokyo-jogging.git
+</description>
+            <pubDate>Sun, 1 July 2010 02:00:00 +0900</pubDate>
+        </item>
+    </channel>
 </rss>

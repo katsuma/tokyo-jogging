@@ -1,8 +1,91 @@
------------------------------
+---------------------------------------------------------------------------
 
   Tokyo-Jogging
 
------------------------------
+  Tokyo-Jogging is a mashup project using wiimote and google street view.
 
-Check this page.
-http://www.tokyo-jogging.com/readme/
+---------------------------------------------------------------------------
+
+
+= What you need to build
+
+== Wiimote
+You've already had this one, haven't you? And you can also use your nunchuk
+and blance wii board.
+
+== Bluetooth stack
+You need a Blue stack to run Tokyo-Jogging.
+
+On Mac OSX, You'll have no problems. You can use a default Bluetooth stack.
+
+But on Windows, you MUST obtain a separate Bluetooth stack. Theoretically, BlueSoleil(*) should work, but it will be better with WIDOMM for most people.
+
+I developed and built Tokyo-Jogging on Mac OSX, so I don't know much about how to build on Windows. If you succeeded to build it, let me know it, please.
+
+== JDK
+You need JDK 1.5 or higher version to build and run Tokyo-Jogging.
+
+On Mac OSX, you can use default JDK. On Windows, you need to install and add the Java executable to your Command Prompt path.
+
+== Eclipse
+You can run Tokyo-Jogging without using Eclipse. But it's very useful for building and running itand I recommend it. Eclipse is a very handy (and free!) IDE that has a special place in the hearts of many Java programmers.
+
+And I wrote how to run Tokyo-Jogging without using Eclise below.
+
+
+= How to build
+
+1. You can download source code files or archived file from github. Type this command and you'll get source code files.
+   git clone git@github.com:katsuma/tokyo-jogging.git
+
+   Or You can download archived file from here.
+   http://github.com/katsuma/tokyo-jogging/downloads
+
+2. Open Eclipse and select "New > Java Project" from the File menu. "Project name" is a free name, for example,"MyTokyoJogging".
+
+3. Click "Finish" button.
+
+4. Copy the src and lib directory in unzipped directory and paste to your project(it may named "MyTokyoJogging") at Package Explorer.
+
+5. Right-click on your package root directory and select "Propertied".
+
+6. Select "Java Build Path".
+
+7. Click the Libraries tab. Add in all JAR files in "lib" directory by clicking on Add External JARs. And after that Eclipse will re-build your project automatically.
+
+
+= How to run (without Eclipse)
+1. Open Terminal and change the unzipped location.
+   (ex: cd /Users/YOUR_NAME/Desktop/Tokyo-Jogging/)
+
+2. Enter this command.
+   ./start-jogging.sh
+
+3. Press the "SYNC" button on your back of Wiimote. If Tokyo-Jogging finds your Wiimote, the message will be displayed on Eclipse console.
+
+4. Open your web browser and go to http://www.tokyo-jogging.com/start/.
+
+5. Put your Wiimote to your pocket and clean up around you.
+
+6. Have fun! :-)
+
+= How to run (with Eclipse)
+
+1. On Eclipse, right-click on your package root directory and select "Run As > Java Application".
+
+2. Select "TokyoJogging - tv.katsuma.jog" and click "OK" button. And it will run the program.
+
+3. Press the "SYNC" button on your back of Wiimote. If Tokyo-Jogging finds your Wiimote, the message will be displayed on Eclipse console.
+
+4. Open your web browser and go to http://www.tokyo-jogging.com/start/.
+
+5. Put your Wiimote to your pocket and clean up around you.
+
+6. Have fun! :-)
+
+= FAQ
+== for Snow Leopard user
+If you use Snow Leopard, check your Java version. You need use JRE 32bit version. If you use Eclipse, set VM arguments -d32. It launches your JRE 32-bit version.
+
+== Got an exception, java.lang.IllegalArgumentException: PCM values restricted by JAR82 to minimum 4097
+When you run the program and if you got an exception "java.lang.IllegalArgumentException: PCM values restricted by JAR82 to minimum 4097", you need to set the JVM option. If you use Eclipse, set VM arguments -Dbluecove.jsr82.psm_minimum_off=true.
