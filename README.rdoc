@@ -1,10 +1,5 @@
----------------------------------------------------------------------------
-
-  Tokyo-Jogging
-
-  Tokyo-Jogging is a mashup project using wiimote and google street view.
-
----------------------------------------------------------------------------
+=  Tokyo-Jogging
+Tokyo-Jogging is a mashup project using wiimote and google street view.
 
 
 = What you need to build
