@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'TJClient' target in the 'TJClient' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif

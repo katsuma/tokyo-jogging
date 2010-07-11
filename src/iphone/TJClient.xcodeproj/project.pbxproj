@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* TJClientAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* TJClientAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		2899E5220DE3E06400AC0155 /* TJClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* TJClientViewController.xib */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28D7ACF80DDB3853001CB0EB /* TJClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* TJClientViewController.m */; };
+		620514F311D77AC100C0A270 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = 620514F211D77AC100C0A270 /* icon57.png */; };
+		6205160711D8EEBB00C0A270 /* HTTPUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6205160611D8EEBB00C0A270 /* HTTPUtil.m */; };
+		6211333711DA771D0010E11B /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6211333611DA771D0010E11B /* InfoViewController.m */; };
+		6213769811E2377E001DBAFE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6213769711E2377E001DBAFE /* Default.png */; };
+		6239985811DCE89200600678 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6239985711DCE89100600678 /* InfoViewController.xib */; };
+		6239994011DD10B600600678 /* tj_img_shoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 6239993F11DD10B600600678 /* tj_img_shoe.png */; };
+		6239994211DD10BD00600678 /* tj_img_concept.png in Resources */ = {isa = PBXBuildFile; fileRef = 6239994111DD10BD00600678 /* tj_img_concept.png */; };
+		62DAFEE911DF8A2B0028F19E /* tj_img_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DAFEE111DF8A2B0028F19E /* tj_img_background.png */; };
+		62DAFEEA11DF8A2B0028F19E /* tj_btn_a.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DAFEE211DF8A2B0028F19E /* tj_btn_a.png */; };
+		62DAFEEB11DF8A2B0028F19E /* tj_btn_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DAFEE311DF8A2B0028F19E /* tj_btn_down.png */; };
+		62DAFEEC11DF8A2B0028F19E /* tj_btn_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DAFEE411DF8A2B0028F19E /* tj_btn_left.png */; };
+		62DAFEED11DF8A2B0028F19E /* tj_btn_minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DAFEE511DF8A2B0028F19E /* tj_btn_minus.png */; };
+		62DAFEEE11DF8A2B0028F19E /* tj_btn_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DAFEE611DF8A2B0028F19E /* tj_btn_plus.png */; };
+		62DAFEEF11DF8A2B0028F19E /* tj_btn_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DAFEE711DF8A2B0028F19E /* tj_btn_right.png */; };
+		62DAFEF011DF8A2B0028F19E /* tj_btn_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 62DAFEE811DF8A2B0028F19E /* tj_btn_up.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* TJClientAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJClientAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* TJClientAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJClientAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* TJClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TJClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2899E5210DE3E06400AC0155 /* TJClientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TJClientViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28D7ACF60DDB3853001CB0EB /* TJClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJClientViewController.h; sourceTree = "<group>"; };
+		28D7ACF70DDB3853001CB0EB /* TJClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJClientViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* TJClient_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJClient_Prefix.pch; sourceTree = "<group>"; };
+		620514F211D77AC100C0A270 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
+		6205160511D8EEBB00C0A270 /* HTTPUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPUtil.h; sourceTree = "<group>"; };
+		6205160611D8EEBB00C0A270 /* HTTPUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPUtil.m; sourceTree = "<group>"; };
+		6211333511DA771D0010E11B /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		6211333611DA771D0010E11B /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		6213769711E2377E001DBAFE /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6239985711DCE89100600678 /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
+		6239993F11DD10B600600678 /* tj_img_shoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj_img_shoe.png; sourceTree = "<group>"; };
+		6239994111DD10BD00600678 /* tj_img_concept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj_img_concept.png; sourceTree = "<group>"; };
+		6285732511E9B8800050536C /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		62DAFEE111DF8A2B0028F19E /* tj_img_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj_img_background.png; sourceTree = "<group>"; };
+		62DAFEE211DF8A2B0028F19E /* tj_btn_a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj_btn_a.png; sourceTree = "<group>"; };
+		62DAFEE311DF8A2B0028F19E /* tj_btn_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj_btn_down.png; sourceTree = "<group>"; };
+		62DAFEE411DF8A2B0028F19E /* tj_btn_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj_btn_left.png; sourceTree = "<group>"; };
+		62DAFEE511DF8A2B0028F19E /* tj_btn_minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj_btn_minus.png; sourceTree = "<group>"; };
+		62DAFEE611DF8A2B0028F19E /* tj_btn_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj_btn_plus.png; sourceTree = "<group>"; };
+		62DAFEE711DF8A2B0028F19E /* tj_btn_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj_btn_right.png; sourceTree = "<group>"; };
+		62DAFEE811DF8A2B0028F19E /* tj_btn_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tj_btn_up.png; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* TJClient-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "TJClient-Info.plist"; path = "../TJClient-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* TJClientAppDelegate.h */,
+				1D3623250D0F684500981E51 /* TJClientAppDelegate.m */,
+				28D7ACF60DDB3853001CB0EB /* TJClientViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* TJClientViewController.m */,
+				6211333511DA771D0010E11B /* InfoViewController.h */,
+				6211333611DA771D0010E11B /* InfoViewController.m */,
+				6205160511D8EEBB00C0A270 /* HTTPUtil.h */,
+				6205160611D8EEBB00C0A270 /* HTTPUtil.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* TJClient.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* TJClient_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62DAFEE011DF8A2B0028F19E /* image */,
+				8D1107310486CEB800E47090 /* TJClient-Info.plist */,
+				2899E5210DE3E06400AC0155 /* TJClientViewController.xib */,
+				6239985711DCE89100600678 /* InfoViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				6285732511E9B8800050536C /* Entitlements.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62DAFEE011DF8A2B0028F19E /* image */ = {
+			isa = PBXGroup;
+			children = (
+				62DAFEE111DF8A2B0028F19E /* tj_img_background.png */,
+				62DAFEE211DF8A2B0028F19E /* tj_btn_a.png */,
+				62DAFEE311DF8A2B0028F19E /* tj_btn_down.png */,
+				62DAFEE411DF8A2B0028F19E /* tj_btn_left.png */,
+				62DAFEE511DF8A2B0028F19E /* tj_btn_minus.png */,
+				62DAFEE611DF8A2B0028F19E /* tj_btn_plus.png */,
+				62DAFEE711DF8A2B0028F19E /* tj_btn_right.png */,
+				62DAFEE811DF8A2B0028F19E /* tj_btn_up.png */,
+				6239993F11DD10B600600678 /* tj_img_shoe.png */,
+				6239994111DD10BD00600678 /* tj_img_concept.png */,
+				6213769711E2377E001DBAFE /* Default.png */,
+				620514F211D77AC100C0A270 /* icon57.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* TJClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TJClient" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TJClient;
+			productName = TJClient;
+			productReference = 1D6058910D05DD3D006BFB54 /* TJClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TJClient" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* TJClient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				2899E5220DE3E06400AC0155 /* TJClientViewController.xib in Resources */,
+				620514F311D77AC100C0A270 /* icon57.png in Resources */,
+				6239985811DCE89200600678 /* InfoViewController.xib in Resources */,
+				6239994011DD10B600600678 /* tj_img_shoe.png in Resources */,
+				6239994211DD10BD00600678 /* tj_img_concept.png in Resources */,
+				62DAFEE911DF8A2B0028F19E /* tj_img_background.png in Resources */,
+				62DAFEEA11DF8A2B0028F19E /* tj_btn_a.png in Resources */,
+				62DAFEEB11DF8A2B0028F19E /* tj_btn_down.png in Resources */,
+				62DAFEEC11DF8A2B0028F19E /* tj_btn_left.png in Resources */,
+				62DAFEED11DF8A2B0028F19E /* tj_btn_minus.png in Resources */,
+				62DAFEEE11DF8A2B0028F19E /* tj_btn_plus.png in Resources */,
+				62DAFEEF11DF8A2B0028F19E /* tj_btn_right.png in Resources */,
+				62DAFEF011DF8A2B0028F19E /* tj_btn_up.png in Resources */,
+				6213769811E2377E001DBAFE /* Default.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* TJClientAppDelegate.m in Sources */,
+				28D7ACF80DDB3853001CB0EB /* TJClientViewController.m in Sources */,
+				6205160711D8EEBB00C0A270 /* HTTPUtil.m in Sources */,
+				6211333711DA771D0010E11B /* InfoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Documents/iPhoneDev/TokyoJogging/TJClient/Resources/Entitlements.plist";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TJClient_Prefix.pch;
+				INFOPLIST_FILE = "TJClient-Info.plist";
+				PRODUCT_NAME = TJClient;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Documents/iPhoneDev/TokyoJogging/TJClient/Resources/Entitlements.plist";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TJClient_Prefix.pch;
+				INFOPLIST_FILE = "TJClient-Info.plist";
+				PRODUCT_NAME = TJClient;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6285733811E9B8C40050536C /* Distribution_adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Utagoe Inc.";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C39EC274-CDF6-4EA0-AF98-75F97F3F3C75";
+				SDKROOT = iphoneos4.0;
+			};
+			name = Distribution_adhoc;
+		};
+		6285733911E9B8C40050536C /* Distribution_adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Utagoe Inc.";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TJClient_Prefix.pch;
+				INFOPLIST_FILE = "TJClient-Info.plist";
+				PRODUCT_NAME = TJClient;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C39EC274-CDF6-4EA0-AF98-75F97F3F3C75";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Distribution_adhoc;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "TJClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+				6285733911E9B8C40050536C /* Distribution_adhoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TJClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+				6285733811E9B8C40050536C /* Distribution_adhoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
