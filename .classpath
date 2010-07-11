@@ -7,6 +7,6 @@
 	<classpathentry kind="lib" path="lib/json_simple.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api-2.5-6.1.11.jar"/>
 	<classpathentry kind="lib" path="lib/WiiRemoteJ.jar"/>
-	<classpathentry kind="lib" path="lib/bluecove-2.0.3.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="lib" path="lib/bluecove-2.1.0.jar"/>
+	<classpathentry kind="output" path="build"/>
 </classpath>
