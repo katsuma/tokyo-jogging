@@ -2,11 +2,29 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/jetty-6.1.11.jar"/>
-	<classpathentry kind="lib" path="lib/jetty-util-6.1.11.jar"/>
 	<classpathentry kind="lib" path="lib/json_simple.jar"/>
-	<classpathentry kind="lib" path="lib/servlet-api-2.5-6.1.11.jar"/>
 	<classpathentry kind="lib" path="lib/WiiRemoteJ.jar"/>
-	<classpathentry kind="lib" path="lib/bluecove-2.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/servlet-api-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-ajp-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-annotations-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-client-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-continuation-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-deploy-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-http-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-io-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-jmx-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-jndi-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-plus-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-policy-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-rewrite-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-security-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-server-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-servlet-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-servlets-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-util-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-webapp-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-websocket-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/jetty-xml-7.1.4.v20100610.jar"/>
+	<classpathentry kind="lib" path="lib/bluecove-2.1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

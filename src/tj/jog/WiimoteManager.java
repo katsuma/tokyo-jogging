@@ -41,7 +41,6 @@ public class WiimoteManager extends Thread implements WiiRemoteListener{
 	
 	public WiimoteManager(HttpServer httpServer){
 		this.httpServer = httpServer;
-		this.httpServer = httpServer;
 		this.logger = Logger.getLogger(this.getClass().getName());
 		this.start();
 		

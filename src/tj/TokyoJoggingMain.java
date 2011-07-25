@@ -42,6 +42,8 @@ public class TokyoJoggingMain {
 		} catch(NumberFormatException e){
 			logger.warning("JOG_HTTP_SERVER_PORT or WALK_HTTP_SERVER_PORT may be not number.");		
 			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }
