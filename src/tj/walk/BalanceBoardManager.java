@@ -103,7 +103,7 @@ public class BalanceBoardManager extends Thread implements BalanceBoardListener 
 		obj.put("Direction", direction);
 		obj.put("TotalMass", totalMass);
 		
-		this.httpServer.setMessage(obj.toString());
+		this.httpServer.getMessageProxy().setMessage(obj.toString());
 //		logger.log(Level.INFO, "Direction(2) : " + direction);
 	}
 	

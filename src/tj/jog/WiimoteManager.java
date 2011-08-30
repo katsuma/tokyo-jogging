@@ -6,6 +6,7 @@ import java.util.logging.Level;
 
 import org.json.simple.JSONObject;
 
+import tj.net.JogSocket;
 import tj.server.HttpServer;
 import wiiremotej.WiiRemote;
 import wiiremotej.WiiRemoteExtension;
@@ -36,7 +37,7 @@ public class WiimoteManager extends Thread implements WiiRemoteListener{
 	public static final byte ACTION_ZOOM_OUT = 0x7;
 	public static final byte ACTION_NOT_DETECTED = -0x1;
 	
-	private final int JOG_HIISTORY_SIZE = 12;
+	private final int JOG_HISTORY_SIZE = 12;
 	private int jogCounter = 0;
 	
 	public WiimoteManager(HttpServer httpServer){
@@ -47,24 +48,36 @@ public class WiimoteManager extends Thread implements WiiRemoteListener{
 	}
 	
 	public void run(){
-		try {
-			this.wiiRemote = WiiRemoteJ.findRemote();
-			if(this.wiiRemote!=null){
-				logger.info("Detected your wiimote.");
+		do {
+			try {
+				this.wiiRemote = WiiRemoteJ.findRemote();
+				if(this.wiiRemote!=null){
+					JSONObject obj = new JSONObject();
+					obj.put("message", "Detected your wiimote.");
+					JogSocket.flushMessage(obj.toString());
+					logger.info("Detected your wiimote.");
+				}
+				this.wiiRemote.addWiiRemoteListener(this);
+				this.wiiRemote.setAccelerometerEnabled(true);
+			} catch (IllegalStateException e){
+				logger.log(Level.SEVERE, "IllegalStateException", e);
+			} catch (InterruptedException e) {
+				logger.log(Level.SEVERE, "InterruptedException", e);
+			} catch (IOException e) {
+				logger.log(Level.SEVERE, "IOException", e);
+			} catch (NullPointerException e){
+				logger.log(Level.SEVERE, "NullException. We could not find your Wiimote.", e);
+				System.exit(1);
+				return;
 			}
-			this.wiiRemote.addWiiRemoteListener(this);
-			this.wiiRemote.setAccelerometerEnabled(true);
-		} catch (IllegalStateException e){
-			logger.log(Level.SEVERE, "IllegalStateException", e);
-		} catch (InterruptedException e) {
-			logger.log(Level.SEVERE, "InterruptedException", e);
-		} catch (IOException e) {
-			logger.log(Level.SEVERE, "IOException", e);
-		} catch (NullPointerException e){
-			logger.log(Level.SEVERE, "NullException. We could not find your Wiimote.", e);
-			System.exit(1);
-			return;
-		}
+
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
+		} while(this.wiiRemote == null);
 	}
 
 	public void IRInputReceived(WRIREvent evt) {
@@ -86,14 +99,14 @@ public class WiimoteManager extends Thread implements WiiRemoteListener{
 
 
 		this.jogCounter++;
-		if (this.jogCounter == JOG_HIISTORY_SIZE) {
+		if (this.jogCounter == JOG_HISTORY_SIZE) {
 			JSONObject obj = new JSONObject();
 			obj.put("xAcceleration",  xAcceleration);
 			obj.put("yAcceleration", yAcceleration);
 			obj.put("zAcceleration", zAcceleration);
 			obj.put("action", ACTION_JOG);
 			
-			this.httpServer.setMessage(obj.toString());
+			this.httpServer.getMessageProxy().setMessage(obj.toString());
 			logger.info(obj.toString());
 			this.jogCounter = 0;
 		}
@@ -117,7 +130,7 @@ public class WiimoteManager extends Thread implements WiiRemoteListener{
 		}
 		
 		if(obj.get("action")!=null){
-			this.httpServer.setMessage(obj.toString());
+			this.httpServer.getMessageProxy().setMessage(obj.toString());
 			logger.info(obj.toString());	
 		}
 	}
@@ -170,7 +183,7 @@ public class WiimoteManager extends Thread implements WiiRemoteListener{
 		obj.put("action", direction);
 		
 		if(obj.get("action")!=null){
-			this.httpServer.setMessage(obj.toString());
+			this.httpServer.getMessageProxy().setMessage(obj.toString());
 			logger.info(obj.toString());	
 		}
 	}

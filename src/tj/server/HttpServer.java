@@ -9,14 +9,16 @@ import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
-import tj.servlet.WiiDeviceServlet;
-import tj.socket.JogSocket;
+import tj.MessageProxy;
+import tj.net.JogSocket;
+import tj.servlet.WiiDeviceHttpServlet;
+import tj.servlet.WiiDeviceWebSocketServlet;
 
 public class HttpServer extends Thread {
 	
 	private int port = 8080;
 	private Server server  = null;
-
+	private MessageProxy proxy = null;
 	private Logger logger = Logger.getLogger(this.getClass().getName());
 
 	public HttpServer() throws Exception {
@@ -29,12 +31,11 @@ public class HttpServer extends Thread {
 	
 	private void init() throws Exception{
 		this.server = new Server(this.port);
-
-	    WiiDeviceServlet wiiDeviceServlet = new WiiDeviceServlet();
-	    ServletHolder sh = new ServletHolder(wiiDeviceServlet);
+		this.proxy = new MessageProxy(this);
 	    ServletContextHandler servletContextHandler = new ServletContextHandler();
-	    servletContextHandler.addServlet(sh, "/ws/*");
-
+	    servletContextHandler.addServlet(new ServletHolder(new WiiDeviceWebSocketServlet()), "/ws/*");
+	    servletContextHandler.addServlet(new ServletHolder(new WiiDeviceHttpServlet(this)), "/servlet/*");
+	    
 	    HandlerList handlerList = new HandlerList();
 	    handlerList.setHandlers(new Handler[] {servletContextHandler});
 	    server.setHandler(handlerList);
@@ -50,8 +51,8 @@ public class HttpServer extends Thread {
 			logger.log(Level.INFO, "HTTP Server start...");
 		}
 	}
-
-	public void setMessage(String message) {
-		JogSocket.flushMessage(message);
+	
+	public MessageProxy getMessageProxy() {
+		return this.proxy;
 	}
 }

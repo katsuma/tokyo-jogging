@@ -35,6 +35,7 @@ div#distance{
 }
 div#distance span{
 	color:#FFF; font-weight:bold;
+	-webkit-text-stroke-color:#EEE;
 }
 span#distance-value{
 	font-size:10em;
